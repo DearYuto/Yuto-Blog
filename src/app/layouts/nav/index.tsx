@@ -4,8 +4,8 @@ import React from 'react';
 
 export default function Nav() {
   return (
-    <header className={'z-10 fixed backdrop-blur flex w-full bg-[#ffffff50]'}>
-      <nav className='relative flex w-full p-4 max-w-[1200px] justify-between m-auto'>
+    <nav className='z-10 fixed h-[56px] w-full m-auto backdrop-blur bg-[#ffffff50] flex items-center justify-center'>
+      <div className='max-w-[1200px] h-[50px] flex justify-between items-center flex-1'>
         <Link href={'/'}>
           <h1>유토의 하루 </h1>
         </Link>
@@ -20,7 +20,7 @@ export default function Nav() {
             <Link href={'/posts'}>Posts</Link>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }

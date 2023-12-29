@@ -26,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body className={`${nanum_gothic.className}`}>
-        <Nav></Nav>
+        <header className='relative h-[60px]'>
+          <Nav />
+        </header>
         {children}
       </body>
     </html>
