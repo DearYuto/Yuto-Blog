@@ -4,13 +4,13 @@ next.js를 사용하여 블로그 만드는 프로젝트입니다.
 
 ## 기능 구현 목록
 
-- [ ] nav 메뉴 구성
+- [x] nav 메뉴 구성
 
-  - [ ] 내 블로그 로고가 존재하고, 로고를 클릭하면 `/` 경로로 이동한다.
-  - [ ] about, posts, contact 로 구성되어 있다.
-  - [ ] about은 클릭 시 `/about`으로 이동한다.
-  - [ ] posts는 클릭 시 `/posts`로 이동한다.
-  - [ ] contact는 클릭 시 `/contact`로 이동한다.
+  - [x] 내 블로그 로고가 존재하고, 로고를 클릭하면 `/` 경로로 이동한다.
+  - [x] about, posts, contact 로 구성되어 있다.
+  - [x] about은 클릭 시 `/about`으로 이동한다.
+  - [x] posts는 클릭 시 `/posts`로 이동한다.
+  - [x] contact는 클릭 시 `/contact`로 이동한다.
 
 - [ ] about 페이지 구성
 
