@@ -1,0 +1,81 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title='Colors' />
+
+## 🎨 컬러 팔레트
+
+프로젝트에 사용할 컬러 팔레트입니다.
+
+# Gray Scale
+
+기본 텍스트 컬러는 `Reason Gray 700`을 사용해주세요.
+
+<ColorPalette>
+  <ColorItem
+    title='REASON GRAYSCALE 🐈'
+    subtitle='그레이 스케일'
+    colors={{
+      'Reason White': '#FFFFFF',
+      'Reason Gray 50': '#F8F8F8',
+      'Reason Gray 100': '#F1F1F1',
+      'Reason Gray 150': '#EAEAEA',
+      'Reason Gray 200': '#E3E3E3',
+      'Reason Gray 300': '#C1C2CA',
+      'Reason Gray 400': '#A1A3AD',
+      'Reason Gray 500': '#7B7C85',
+      'Reason Gray 600': '#55565C',
+      'Reason Gray 700': '#3D3E41',
+      'Reason Gray 800': '#222325',
+    }}
+  />
+</ColorPalette>
+
+# Main Color
+
+프로젝트 메인 컬러입니다.
+
+`강조`할 부분에 사용할 수 있습니다.
+
+현재 선택된 요소, 강조할 버튼 등에 사용할 수 있습니다.
+
+<ColorPalette>
+  <ColorItem
+    title='REASON PRIMARY 🐈'
+    subtitle='프로젝트 메인 컬러'
+    colors={{ 'Reason Primary': '#7885EC', 'Reason Primary light': '#AEB7FF' }}
+  />
+</ColorPalette>
+
+# Danger
+
+Danger 컬러는 `삭제`와 같이 중요한 곳에만 사용합니다.
+
+페이지 내에 1회 이상 사용할 수 없습니다.
+
+컬러는 프로젝트 진행 중에 변경될 수 있습니다.
+
+<ColorPalette>
+  <ColorItem
+    title='Danger'
+    colors={{ 'Reason Danger': '#CB4C54', 'Reason Danger Light': '#F57E85' }}
+  />
+</ColorPalette>
+
+# ETC.
+
+배경 그라데이션 컬러로 사용되는 기타 컬러입니다.
+
+해당 팔레트는 컴포넌트에서 사용할 수 없습니다.
+
+컴포넌트에서 사용할 컬러를 추가해야 한다면 별도의 팔레트를 생성하세요.
+
+<ColorPalette>
+  <ColorItem
+    title='theme.color.positive'
+    colors={{
+      'Reason Serenity 100': '#C8CDF1',
+      'Reason Serenity 50 ': '#E3E5F5',
+      'Reason Gray Purple 50': '#F4E3F5',
+    }}
+  />
+</ColorPalette>
