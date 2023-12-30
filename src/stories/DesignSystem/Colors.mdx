@@ -1,3 +1,4 @@
+import { palette } from '../../utils/colors.ts';
 import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
 
 <Meta title='Colors' />
@@ -15,17 +16,17 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
     title='REASON GRAYSCALE 🐈'
     subtitle='그레이 스케일'
     colors={{
-      'Reason White': '#FFFFFF',
-      'Reason Gray 50': '#F8F8F8',
-      'Reason Gray 100': '#F1F1F1',
-      'Reason Gray 150': '#EAEAEA',
-      'Reason Gray 200': '#E3E3E3',
-      'Reason Gray 300': '#C1C2CA',
-      'Reason Gray 400': '#A1A3AD',
-      'Reason Gray 500': '#7B7C85',
-      'Reason Gray 600': '#55565C',
-      'Reason Gray 700': '#3D3E41',
-      'Reason Gray 800': '#222325',
+      'Reason White': palette.white,
+      'Reason Gray 50': palette.gray50,
+      'Reason Gray 100': palette.gray100,
+      'Reason Gray 150': palette.gray150,
+      'Reason Gray 200': palette.gray200,
+      'Reason Gray 300': palette.gray300,
+      'Reason Gray 400': palette.gray400,
+      'Reason Gray 500': palette.gray500,
+      'Reason Gray 600': palette.gray600,
+      'Reason Gray 700': palette.gray700,
+      'Reason Gray 800': palette.gray800,
     }}
   />
 </ColorPalette>
@@ -42,7 +43,10 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
   <ColorItem
     title='REASON PRIMARY 🐈'
     subtitle='프로젝트 메인 컬러'
-    colors={{ 'Reason Primary': '#7885EC', 'Reason Primary light': '#AEB7FF' }}
+    colors={{
+      'Reason Primary': palette.primary,
+      'Reason Primary light': palette.primaryLight,
+    }}
   />
 </ColorPalette>
 
@@ -57,7 +61,10 @@ Danger 컬러는 `삭제`와 같이 중요한 곳에만 사용합니다.
 <ColorPalette>
   <ColorItem
     title='Danger'
-    colors={{ 'Reason Danger': '#CB4C54', 'Reason Danger Light': '#F57E85' }}
+    colors={{
+      'Reason Danger': palette.danger,
+      'Reason Danger Light': palette.dangerLight,
+    }}
   />
 </ColorPalette>
 
@@ -73,9 +80,9 @@ Danger 컬러는 `삭제`와 같이 중요한 곳에만 사용합니다.
   <ColorItem
     title='theme.color.positive'
     colors={{
-      'Reason Serenity 100': '#C8CDF1',
-      'Reason Serenity 50 ': '#E3E5F5',
-      'Reason Gray Purple 50': '#F4E3F5',
+      'Reason Serenity 50 ': palette.serenity50,
+      'Reason Serenity 100': palette.serenity100,
+      'Reason Gray Purple 50': palette.grayPurple50,
     }}
   />
 </ColorPalette>
