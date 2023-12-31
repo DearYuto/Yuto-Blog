@@ -5,12 +5,14 @@ import {
   flexAlignItems,
   flexDirections,
   flexGaps,
+  flexHeight,
   flexWidth,
 } from './flex.css';
 
 type Props = {
   children: React.ReactNode;
-  width?: 'half' | 'full';
+  height?: 'auto' | 'half' | 'full' | 'inherit';
+  width?: 'auto' | 'half' | 'full' | 'inherit';
   gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg';
   direction?: 'row' | 'column';
   justifyContent?: 'center' | 'stretch' | 'spaceBetween';
@@ -20,6 +22,7 @@ type Props = {
 export default function Flex({
   children,
   width = 'full',
+  height = 'auto',
   gap = 'none',
   direction = 'row',
   alignItems = 'start',
@@ -27,7 +30,7 @@ export default function Flex({
 }: Props) {
   return (
     <div
-      className={`${display} ${flexWidth[width]} ${flexDirections[direction]} ${flexGaps[gap]} ${flexAlignItems[alignItems]} ${felxJustifyContent[justifyContent]}`}
+      className={`${display} ${flexWidth[width]} ${flexHeight[height]} ${flexDirections[direction]} ${flexGaps[gap]} ${flexAlignItems[alignItems]} ${felxJustifyContent[justifyContent]}`}
     >
       {children}
     </div>

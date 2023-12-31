@@ -29,6 +29,15 @@ export const flexAlignItems = styleVariants({
 });
 
 export const flexWidth = styleVariants({
+  auto: { height: 'auto' },
   half: { width: '50%' },
   full: { width: '100%' },
+  inherit: { height: 'inherit' },
+});
+
+export const flexHeight = styleVariants({
+  auto: { height: 'auto' },
+  half: { height: '50%' },
+  full: { height: '100%' },
+  inherit: { height: 'inherit' },
 });
