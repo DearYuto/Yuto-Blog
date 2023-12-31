@@ -7,3 +7,5 @@ export const contaier = style({
   display: 'flex',
   alignItems: 'center',
 });
+
+// TODO 스타일 하드코딩 개선 가능한지 검토하기

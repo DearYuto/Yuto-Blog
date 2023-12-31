@@ -7,17 +7,12 @@ import { contaier } from './nav.css';
 
 export default function Nav() {
   return (
-    <nav className={contaier}>
+    <nav className={`${contaier} ${nanum_gothic.className}`}>
       <Flex alignItems='center' justifyContent='spaceBetween'>
         <Link href={'/'}>
-          <h1
-            style={{ display: 'contents' }}
-            className={nanum_gothic.className}
-          >
-            <Text size='lg' weight='bold'>
-              유토의 하루
-            </Text>
-          </h1>
+          <Text size='lg' weight='bold' as='h1'>
+            유토의 하루
+          </Text>
         </Link>
         <div className={`${comfortaa.className}`}>
           <Flex gap='md'>
