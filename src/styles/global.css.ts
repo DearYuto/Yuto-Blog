@@ -1,5 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
-import './reset.css.ts';
+import './reset.css';
+import { nanum_gothic } from '@/app/layout';
 
 globalStyle('*', {
   padding: 0,
@@ -13,6 +14,7 @@ globalStyle('*', {
 globalStyle('html', {
   position: 'relative',
   color: '#393a47',
+  fontFamily: 'nanum_gothic',
 });
 
 globalStyle('body', {
