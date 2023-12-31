@@ -1,4 +1,4 @@
-import { palette } from '../../../utils/colors.css';
+import { palette } from '../../../utils/colors';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 const base = style({
