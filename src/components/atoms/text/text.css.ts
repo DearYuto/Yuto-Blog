@@ -19,5 +19,6 @@ export const textSize = styleVariants({
   sm: { fontSize: '14px' },
   md: { fontSize: '16px' },
   lg: { fontSize: '18px' },
-  xlg: { fontSize: '24px' },
+  xl: { fontSize: '24px' },
+  '2xl': { fontSize: '30px' },
 });
