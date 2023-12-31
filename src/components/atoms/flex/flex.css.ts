@@ -27,3 +27,8 @@ export const flexAlignItems = styleVariants({
   center: { alignItems: 'center' },
   start: { alignItems: 'flex-start' },
 });
+
+export const flexWidth = styleVariants({
+  half: { width: '50%' },
+  full: { width: '100%' },
+});
