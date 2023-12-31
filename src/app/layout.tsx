@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Comfortaa, Nanum_Gothic } from 'next/font/google';
 import '@/styles/global.css';
 
-import Nav from './layouts/nav';
+import Nav from '../components/organisms/nav';
 
 export const nanum_gothic = Nanum_Gothic({
   weight: ['400', '700', '800'],
@@ -27,9 +27,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body className={`${nanum_gothic.className}`}>
-        <header>
-          <Nav />
-        </header>
+        <Nav />
         {children}
       </body>
     </html>

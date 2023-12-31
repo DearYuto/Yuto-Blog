@@ -1,6 +1,6 @@
 import React from 'react';
 import { textColor, textSize, textWeight } from './text.css';
-import { palette } from '@/utils/colors.css';
+import { palette } from '@/utils/colors';
 
 export type Props = {
   children: React.ReactNode;
