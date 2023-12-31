@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Comfortaa, Nanum_Gothic } from 'next/font/google';
-import './globals.css';
+import '@/styles/global.css';
+
 import Nav from './layouts/nav';
 
 export const nanum_gothic = Nanum_Gothic({
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body className={`${nanum_gothic.className}`}>
-        <header className='relative h-[60px]'>
+        <header>
           <Nav />
         </header>
         {children}
