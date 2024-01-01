@@ -1,9 +1,16 @@
 import { globalStyle } from '@vanilla-extract/css';
 
 globalStyle('*', {
-  margin: 0,
   padding: 0,
-  boxSizing: 'border-box',
+  margin: 0,
+  boxSizing: 'content-box',
+  listStyle: 'none',
+  textDecoration: 'none',
+  color: 'black',
+});
+
+globalStyle('h1', {
+  margin: 0,
 });
 
 globalStyle('html, body', {

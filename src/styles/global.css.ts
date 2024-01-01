@@ -1,15 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
 import './reset.css';
-import { nanum_gothic } from '@/app/layout';
-
-globalStyle('*', {
-  padding: 0,
-  margin: 0,
-  boxSizing: 'content-box',
-  listStyle: 'none',
-  textDecoration: 'none',
-  color: 'black',
-});
 
 globalStyle('html', {
   position: 'relative',
