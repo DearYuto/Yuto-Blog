@@ -21,7 +21,9 @@ export const palette = {
   gray800: '#222325',
 
   // etc.
-  serenity100: '#C8CDF1',
-  serenity50: '#E3E5F5',
+  serenity150: '#C8CDF1',
+  serenity100: '#E3E5F5',
+  serenity50: '#F8F9FF',
+
   grayPurple50: '#F4E3F5',
 };
