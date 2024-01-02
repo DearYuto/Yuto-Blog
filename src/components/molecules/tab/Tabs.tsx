@@ -1,14 +1,13 @@
-import Text from '@/components/atoms/text/Text';
 import React from 'react';
-import { background, tab } from './tabs.css';
 import Tab from './Tab';
+import Flex from '@/components/atoms/flex/Flex';
 
 type TabsProps = {
   children: React.ReactNode;
 };
 
 function TabContainer({ children }: TabsProps) {
-  return <ul className={`${tab} ${background.active}`}>{children}</ul>;
+  return <Flex>{children}</Flex>;
 }
 
 const Tabs = Object.assign(TabContainer, { Tab });
