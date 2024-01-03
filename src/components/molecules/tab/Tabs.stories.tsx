@@ -12,16 +12,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: (
-      <>
-        <Tab active label='첫번째 탭'>
-          탭 컨텐츠
-        </Tab>
-        <Tab active={false} label='두번째 탭'>
-          탭 컨텐츠
-        </Tab>
-        <Tab label='세번째 탭'>탭 컨텐츠</Tab>
-      </>
-    ),
+    children: [
+      <Tab key={0} active>
+        탭1
+      </Tab>,
+      <Tab key={1}>탭2</Tab>,
+      <Tab key={2}>탭3</Tab>,
+    ],
   },
 };

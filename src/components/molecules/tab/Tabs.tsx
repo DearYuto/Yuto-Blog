@@ -1,20 +1,48 @@
 'use client';
 
-import React, { useState } from 'react';
-import Tab, { TabProps } from './Tab';
+import type { SetStateAction } from 'react';
+import React, {
+  useState,
+  createContext,
+  Dispatch,
+  Children,
+  cloneElement,
+} from 'react';
 import Flex from '@/components/atoms/flex/Flex';
+import Tab, { TabProps } from './Tab';
 
 type TabsProps = {
   activeTabIndex?: number;
   children: React.ReactElement<TabProps>[];
 };
 
+export const TabsStateContext = createContext<number>(0);
+export const TabsDispatchContext = createContext<
+  Dispatch<SetStateAction<number>>
+>(() => 0);
+
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   checkActiveIndex({ children, activeTabIndex });
 
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(activeTabIndex);
 
-  return <Flex>{children}</Flex>;
+  const cloneChildren = Children.map(children, (child, idx) => {
+    const newChild = cloneElement(child, {
+      active: activeTab === idx,
+      key: idx,
+      onClick: () => setActiveTab(idx),
+    });
+    return <>{newChild}</>;
+  });
+
+  // TODO Provider 사용안하면 제거하기
+  return (
+    <TabsStateContext.Provider value={activeTab}>
+      <TabsDispatchContext.Provider value={setActiveTab}>
+        <Flex>{cloneChildren}</Flex>
+      </TabsDispatchContext.Provider>
+    </TabsStateContext.Provider>
+  );
 }
 
 const Tabs = Object.assign(TabContainer, { Tab });
