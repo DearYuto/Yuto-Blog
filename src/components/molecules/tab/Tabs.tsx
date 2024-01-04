@@ -1,15 +1,10 @@
 'use client';
 
-import type { SetStateAction } from 'react';
-import React, {
-  useState,
-  createContext,
-  Dispatch,
-  Children,
-  cloneElement,
-} from 'react';
+import { SetStateAction, useContext } from 'react';
+import React, { useState, createContext, Dispatch } from 'react';
 import Flex from '@/components/atoms/flex/Flex';
-import Tab, { TabProps } from './Tab';
+import { tab } from './tabs.css';
+import Text from '@/components/atoms/text/Text';
 
 type TabsProps = {
   activeTabIndex?: number;
@@ -26,24 +21,33 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
 
   const [activeTab, setActiveTab] = useState(activeTabIndex);
 
-  const cloneChildren = Children.map(children, (child, idx) => {
-    const newChild = cloneElement(child, {
-      active: activeTab === idx,
-      key: idx,
-      onClick: () => setActiveTab(idx),
-    });
-    return <>{newChild}</>;
-  });
-
-  // TODO Provider 사용안하면 제거하기
   return (
     <TabsStateContext.Provider value={activeTab}>
       <TabsDispatchContext.Provider value={setActiveTab}>
-        <Flex>{cloneChildren}</Flex>
+        <Flex>{children}</Flex>
       </TabsDispatchContext.Provider>
     </TabsStateContext.Provider>
   );
 }
+
+type TabProps = { label: string; index: number };
+
+const Tab = ({ label, index }: TabProps) => {
+  const active = useContext(TabsStateContext);
+  const setActiveTab = useContext(TabsDispatchContext);
+
+  return (
+    <>
+      <div
+        onClick={() => setActiveTab(index)}
+        role='tab'
+        className={`${tab[active === index ? 'active' : 'inactive']}`}
+      >
+        <Text color={active === index ? 'primary' : 'gray700'}>{label}</Text>
+      </div>
+    </>
+  );
+};
 
 const Tabs = Object.assign(TabContainer, { Tab });
 export default Tabs;
