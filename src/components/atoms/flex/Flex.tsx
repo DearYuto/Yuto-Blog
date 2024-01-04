@@ -10,7 +10,7 @@ import {
 } from './flex.css';
 
 type Props = {
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactElement | React.ReactElement[];
   height?: 'auto' | 'half' | 'full' | 'inherit';
   width?: 'auto' | 'half' | 'full' | 'inherit';
   gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg';
