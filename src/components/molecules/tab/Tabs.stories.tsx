@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Tabs from './Tabs';
-import Tab from './Tab';
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -12,12 +11,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    activeTabIndex: 0,
     children: [
-      <Tab key={0} active>
-        탭1
-      </Tab>,
-      <Tab key={1}>탭2</Tab>,
-      <Tab key={2}>탭3</Tab>,
+      <Tabs.Tab key='0' index={0} label='탭1'></Tabs.Tab>,
+      <Tabs.Tab key='1' index={1} label='탭2'></Tabs.Tab>,
+      <Tabs.Tab key='2' index={2} label='탭3'></Tabs.Tab>,
     ],
   },
 };
