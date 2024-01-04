@@ -1,6 +1,6 @@
 'use client';
 
-import { SetStateAction, useContext } from 'react';
+import { ReactElement, ReactNode, SetStateAction, useContext } from 'react';
 import React, { useState, createContext, Dispatch } from 'react';
 import Flex from '@/components/atoms/flex/Flex';
 import { tab } from './tabs.css';
@@ -8,7 +8,7 @@ import Text from '@/components/atoms/text/Text';
 
 type TabsProps = {
   activeTabIndex?: number;
-  children: React.ReactElement<TabProps>[];
+  children: React.ReactElement<TabProps | ContentProps>[];
 };
 
 export const TabsStateContext = createContext<number>(0);
@@ -16,23 +16,50 @@ export const TabsDispatchContext = createContext<
   Dispatch<SetStateAction<number>>
 >(() => 0);
 
+/**
+ *
+ * Root
+ * Tabs 최상위 컴포넌트
+ *
+ */
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   checkActiveIndex({ children, activeTabIndex });
 
   const [activeTab, setActiveTab] = useState(activeTabIndex);
 
+  const labels: ReactNode[] = [];
+  const contents: ReactNode[] = [];
+
+  React.Children.forEach(children, (child: ReactElement) => {
+    const type = child.type as unknown as { displayName: string };
+
+    if (type.displayName === 'TabLabel') {
+      return labels.push(child);
+    }
+
+    if (type.displayName === 'TabContent') {
+      return contents.push(child);
+    }
+  });
+
   return (
     <TabsStateContext.Provider value={activeTab}>
       <TabsDispatchContext.Provider value={setActiveTab}>
-        <Flex>{children}</Flex>
+        <Flex>{labels}</Flex>
+        <Flex>{contents[activeTab]}</Flex>
       </TabsDispatchContext.Provider>
     </TabsStateContext.Provider>
   );
 }
 
+/**
+ *
+ * TabLabel
+ * : 탭 타이틀 컴포넌트
+ *
+ *  **/
 type TabProps = { label: string; index: number };
-
-const Tab = ({ label, index }: TabProps) => {
+const TabLabel = ({ label, index }: TabProps) => {
   const active = useContext(TabsStateContext);
   const setActiveTab = useContext(TabsDispatchContext);
 
@@ -49,11 +76,34 @@ const Tab = ({ label, index }: TabProps) => {
   );
 };
 
-const Tabs = Object.assign(TabContainer, { Tab });
+TabLabel.displayName = 'TabLabel';
+
+/**
+ *
+ * Content
+ * : 선택된 탭 컨텐츠
+ *
+ * **/
+type ContentProps = { children: ReactNode };
+const TabContent = ({ children }: ContentProps) => {
+  return <p>{children}</p>;
+};
+
+TabContent.displayName = 'TabContent';
+
+/**
+ * ! export
+ * **/
+const Tabs = Object.assign(TabContainer, {
+  Label: TabLabel,
+  Content: TabContent,
+});
+
 export default Tabs;
 
 /**
  * 예외처리 코드
+ *
  */
 const checkActiveIndex = ({ activeTabIndex, children }: TabsProps) => {
   if (!activeTabIndex) return;
