@@ -3,7 +3,7 @@
 import { ReactElement, ReactNode, SetStateAction, useContext } from 'react';
 import React, { useState, createContext, Dispatch } from 'react';
 import Flex from '@/components/atoms/flex/Flex';
-import { tab } from './tabs.css';
+import { content, tab } from './tabs.css';
 import Text from '@/components/atoms/text/Text';
 
 type TabsProps = {
@@ -86,7 +86,7 @@ TabLabel.displayName = 'TabLabel';
  * **/
 type ContentProps = { children: ReactNode };
 const TabContent = ({ children }: ContentProps) => {
-  return <p>{children}</p>;
+  return <p className={content}>{children}</p>;
 };
 
 TabContent.displayName = 'TabContent';

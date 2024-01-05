@@ -2,7 +2,7 @@ import { palette } from '@/utils/colors';
 import { style, styleVariants } from '@vanilla-extract/css';
 
 const base = style({
-  padding: '10px 15px',
+  padding: '8px 15px',
   cursor: 'pointer',
   borderRadius: '10px 10px 0 0',
 });
@@ -16,5 +16,16 @@ export const tab = styleVariants({
       borderBottom: `2px solid ${palette.primary}`,
     },
   ],
-  inactive: [base, { background: palette.white, color: palette.gray700 }],
+  inactive: [
+    base,
+    {
+      background: palette.white,
+      color: palette.gray700,
+      borderBottom: `2px solid ${palette.gray100}`,
+    },
+  ],
+});
+
+export const content = style({
+  padding: '20px 10px',
 });
