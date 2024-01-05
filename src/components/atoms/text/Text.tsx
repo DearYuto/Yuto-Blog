@@ -8,10 +8,12 @@ export type Props = {
   color?: keyof typeof palette;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   weight?: 'normal' | 'bold' | 'extraBold';
+  style?: React.CSSProperties | undefined;
 };
 
 export default function Text({
   children,
+  style,
   as: Component = 'span',
   color = 'gray700',
   size = 'md',
@@ -19,6 +21,7 @@ export default function Text({
 }: Props) {
   return (
     <Component
+      style={style}
       className={`${textColor[color]} ${textWeight[weight]} ${textSize[size]}`}
     >
       {children}

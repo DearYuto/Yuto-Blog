@@ -17,10 +17,12 @@ type Props = {
   direction?: 'row' | 'column';
   justifyContent?: 'center' | 'stretch' | 'spaceBetween';
   alignItems?: 'center' | 'start';
+  style?: React.CSSProperties | undefined;
 };
 
 export default function Flex({
   children,
+  style,
   width = 'full',
   height = 'auto',
   gap = 'none',
@@ -30,6 +32,7 @@ export default function Flex({
 }: Props) {
   return (
     <div
+      style={style}
       className={`${display} ${flexWidth[width]} ${flexHeight[height]} ${flexDirections[direction]} ${flexGaps[gap]} ${flexAlignItems[alignItems]} ${felxJustifyContent[justifyContent]}`}
     >
       {children}
