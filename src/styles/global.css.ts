@@ -1,5 +1,17 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
 import './reset.css';
+
+/**
+ * ```
+ * Font loader values must be explicitly written literals.
+ * ```
+ * @see app/layout.tsx
+ */
+export const vars = createGlobalTheme(':root', {
+  font: {
+    nanum_gothic: `var(--font-nanum-gothic)`,
+  },
+});
 
 globalStyle('html', {
   position: 'relative',

@@ -7,11 +7,13 @@ import Nav from '../components/organisms/nav/Nav';
 export const nanum_gothic = Nanum_Gothic({
   weight: ['400', '700', '800'],
   subsets: ['latin'],
+  variable: '--font-nanum-gothic',
 });
 
 export const comfortaa = Comfortaa({
   weight: ['300', '400', '600', '700'],
   subsets: ['latin'],
+  variable: '--font-comfortaa',
 });
 
 export const metadata: Metadata = {

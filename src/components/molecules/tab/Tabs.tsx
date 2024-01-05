@@ -70,7 +70,12 @@ const TabLabel = ({ label, index }: TabProps) => {
         role='tab'
         className={`${tab[active === index ? 'active' : 'inactive']}`}
       >
-        <Text color={active === index ? 'primary' : 'gray700'}>{label}</Text>
+        <Text
+          weight={active === index ? 'bold' : 'normal'}
+          color={active === index ? 'primary' : 'gray700'}
+        >
+          {label}
+        </Text>
       </div>
     </>
   );
