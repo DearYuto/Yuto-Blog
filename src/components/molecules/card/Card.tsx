@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { style } from '@vanilla-extract/css';
 
 const CARD_DISPLAY_NAME = Object.freeze({
-  title: 'card_title',
-  content: 'card_content',
-  thumbnail: 'card_thumbnail',
+  title: 'Card.Title',
+  content: 'Card.Content',
+  thumbnail: 'Card.Thumbnail',
 });
 
 type Props = {
@@ -149,7 +149,7 @@ CardContent.displayName = CARD_DISPLAY_NAME.content;
  * ! export
  * **/
 const Card = Object.assign(CardContainer, {
-  Thunbnail: CardThumbnail,
+  Thumbnail: CardThumbnail,
   Title: CardTitle,
   Content: CardContent,
 });

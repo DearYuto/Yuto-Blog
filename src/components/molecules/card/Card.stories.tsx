@@ -9,6 +9,9 @@ const meta: Meta = {
   component: Card,
   tags: ['autodocs'],
   argTypes: {
+    thumbnail: {
+      name: 'thumbnail',
+    },
     title: {
       name: 'title (필수)',
       control: 'text',
@@ -28,13 +31,13 @@ export default meta;
 
 export const Default: StoryFn = ({ title = '타이틀', content = '컨텐츠' }) => (
   <Card>
-    {/* <Card.Thumbnail
+    <Card.Thumbnail
       src=''
       width={100}
       height={100}
       alt='썸네일'
       key='0'
-    ></Card.Thumbnail> */}
+    ></Card.Thumbnail>
     <Card.Title key='1'>{title}</Card.Title>
     <Card.Content key='2'>{content}</Card.Content>
   </Card>
