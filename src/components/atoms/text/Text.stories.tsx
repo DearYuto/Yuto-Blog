@@ -5,6 +5,7 @@ import Text from './Text';
  * 텍스트 컴포넌트입니다.
  */
 const meta: Meta<typeof Text> = {
+  title: 'Common/Text',
   component: Text,
   tags: ['autodocs'],
 };
