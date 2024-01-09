@@ -41,3 +41,12 @@ export const flexHeight = styleVariants({
   full: { height: '100%' },
   inherit: { height: 'inherit' },
 });
+
+export const flexWrap = styleVariants({
+  nowrap: {
+    flexWrap: 'nowrap',
+  },
+  wrap: {
+    flexWrap: 'wrap',
+  },
+});

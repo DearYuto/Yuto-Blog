@@ -7,7 +7,9 @@ import {
   flexGaps,
   flexHeight,
   flexWidth,
+  flexWrap,
 } from './flex.css';
+import classNames from 'classnames';
 
 type Props = {
   children: React.ReactNode | React.ReactElement | React.ReactElement[];
@@ -17,12 +19,14 @@ type Props = {
   direction?: 'row' | 'column';
   justifyContent?: 'center' | 'stretch' | 'spaceBetween';
   alignItems?: 'center' | 'start';
+  wrap?: 'wrap' | 'nowrap';
   style?: React.CSSProperties | undefined;
 };
 
 export default function Flex({
   children,
   style,
+  wrap = 'nowrap',
   width = 'full',
   height = 'auto',
   gap = 'none',
@@ -30,11 +34,19 @@ export default function Flex({
   alignItems = 'start',
   justifyContent = 'stretch',
 }: Props) {
+  const className = classNames(
+    display,
+    flexWidth[width],
+    flexHeight[height],
+    flexDirections[direction],
+    flexGaps[gap],
+    flexAlignItems[alignItems],
+    felxJustifyContent[justifyContent],
+    flexWrap[wrap]
+  );
+
   return (
-    <div
-      style={style}
-      className={`${display} ${flexWidth[width]} ${flexHeight[height]} ${flexDirections[direction]} ${flexGaps[gap]} ${flexAlignItems[alignItems]} ${felxJustifyContent[justifyContent]}`}
-    >
+    <div style={style} className={className}>
       {children}
     </div>
   );
