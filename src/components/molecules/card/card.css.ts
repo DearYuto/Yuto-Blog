@@ -10,6 +10,13 @@ export const container = style({
 
   padding: '16px 0',
   overflow: 'hidden',
+
+  cursor: 'pointer',
+  transition: 'all .2s',
+
+  ':hover': {
+    scale: 1.015,
+  },
 });
 
 export const image = style({
