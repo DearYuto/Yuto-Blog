@@ -1,19 +1,17 @@
 'use client';
 
-import { useState } from 'react';
 import { TabsDispatchContext, TabsStateContext } from '../utils/customHooks';
 
 type ProviderProps = {
-  activeTabIndex: number;
   children: React.ReactNode;
+  state: number;
+  setState: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export function TabProvider({ children, activeTabIndex = 0 }: ProviderProps) {
-  const [activeTab, setActiveTab] = useState(activeTabIndex);
-
+export function TabProvider({ children, setState, state = 0 }: ProviderProps) {
   return (
-    <TabsStateContext.Provider value={activeTab}>
-      <TabsDispatchContext.Provider value={setActiveTab}>
+    <TabsStateContext.Provider value={state}>
+      <TabsDispatchContext.Provider value={setState}>
         {children}
       </TabsDispatchContext.Provider>
     </TabsStateContext.Provider>

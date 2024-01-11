@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode, useState } from 'react';
 import { useActiveTab, useActiveTabDispatch } from './utils/customHooks';
 
 import Flex from '@/components/atoms/flex/Flex';
@@ -23,7 +23,7 @@ export type TabsProps = {
  */
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   checkActiveIndex({ children, activeTabIndex });
-  const activeIndex = useActiveTab();
+  const [activeIndex, setActiveIndex] = useState(activeTabIndex);
 
   const labels: ReactNode[] = [];
   const contents: ReactNode[] = [];
@@ -41,7 +41,7 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   });
 
   return (
-    <TabProvider activeTabIndex={activeTabIndex}>
+    <TabProvider state={activeIndex} setState={setActiveIndex}>
       <Flex>{labels}</Flex>
       <Flex>{contents[activeIndex]}</Flex>
     </TabProvider>
