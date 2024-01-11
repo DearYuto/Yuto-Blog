@@ -16,6 +16,24 @@ export const TabsDispatchContext = createContext<
   Dispatch<SetStateAction<number>>
 >(() => 0);
 
+// ! 고민해보기
+// * TODO useReducer를 사용해서 프로바이더만 분리해서 사용하는 건 어떨까 ?
+type ProviderProps = {
+  activeTabIndex: number;
+  children: React.ReactNode;
+};
+function TabProvider({ children, activeTabIndex = 0 }: ProviderProps) {
+  const [activeTab, setActiveTab] = useState(activeTabIndex);
+
+  return (
+    <TabsStateContext.Provider value={activeTab}>
+      <TabsDispatchContext.Provider value={setActiveTab}>
+        {children}
+      </TabsDispatchContext.Provider>
+    </TabsStateContext.Provider>
+  );
+}
+
 /**
  *
  * Root
@@ -24,7 +42,6 @@ export const TabsDispatchContext = createContext<
  */
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   checkActiveIndex({ children, activeTabIndex });
-
   const [activeTab, setActiveTab] = useState(activeTabIndex);
 
   const labels: ReactNode[] = [];
@@ -60,8 +77,8 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
  *  **/
 type TabProps = { label: string; index: number };
 const TabLabel = ({ label, index }: TabProps) => {
-  const active = useContext(TabsStateContext);
-  const setActiveTab = useContext(TabsDispatchContext);
+  const active = useActiveTab();
+  const setActiveTab = useActiveTabDispatch();
 
   return (
     <>
@@ -119,3 +136,17 @@ const checkActiveIndex = ({ activeTabIndex, children }: TabsProps) => {
     );
   }
 };
+
+/**
+ *
+ * context 사용
+ * use 함수
+ * * 나중에 파일 분리할 경우 export 추가하기
+ */
+function useActiveTab() {
+  return useContext(TabsStateContext);
+}
+
+function useActiveTabDispatch() {
+  return useContext(TabsDispatchContext);
+}
