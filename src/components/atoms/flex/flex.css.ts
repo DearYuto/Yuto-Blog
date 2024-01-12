@@ -21,6 +21,12 @@ export const felxJustifyContent = styleVariants({
   center: { justifyContent: 'center' },
   stretch: { justifyContent: 'stretch' },
   spaceBetween: { justifyContent: 'space-between' },
+  spaceEvenly: {
+    justifyContent: 'space-evenly',
+  },
+  flexStart: {
+    justifyContent: 'flex-start',
+  },
 });
 
 export const flexAlignItems = styleVariants({

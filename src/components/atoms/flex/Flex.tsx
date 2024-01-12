@@ -17,7 +17,12 @@ type Props = {
   width?: 'auto' | 'half' | 'full' | 'inherit';
   gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg';
   direction?: 'row' | 'column';
-  justifyContent?: 'center' | 'stretch' | 'spaceBetween';
+  justifyContent?:
+    | 'center'
+    | 'stretch'
+    | 'spaceBetween'
+    | 'spaceEvenly'
+    | 'flexStart';
   alignItems?: 'center' | 'start';
   wrap?: 'wrap' | 'nowrap';
   style?: React.CSSProperties | undefined;
