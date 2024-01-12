@@ -23,7 +23,6 @@ export type TabsProps = {
  */
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   checkActiveIndex({ children, activeTabIndex });
-  const [activeIndex, setActiveIndex] = useState(activeTabIndex);
 
   const labels: ReactNode[] = [];
   const contents: ReactNode[] = [];
@@ -41,9 +40,9 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   });
 
   return (
-    <TabProvider state={activeIndex} setState={setActiveIndex}>
+    <TabProvider>
       <Flex>{labels}</Flex>
-      <Flex>{contents[activeIndex]}</Flex>
+      <Flex>{contents}</Flex>
     </TabProvider>
   );
 }
