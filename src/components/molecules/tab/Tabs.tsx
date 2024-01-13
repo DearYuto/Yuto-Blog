@@ -40,7 +40,7 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
   });
 
   return (
-    <TabProvider>
+    <TabProvider activeTabIndex={activeTabIndex}>
       <Flex>{labels}</Flex>
       <Flex>{contents}</Flex>
     </TabProvider>

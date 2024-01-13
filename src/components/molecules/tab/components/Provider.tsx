@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { TabsDispatchContext, TabsStateContext } from '../utils/customHooks';
 
 type ProviderProps = {
+  activeTabIndex: number;
   children: React.ReactElement[];
 };
 
-export function TabProvider({ children }: ProviderProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export function TabProvider({ children, activeTabIndex }: ProviderProps) {
+  const [activeIndex, setActiveIndex] = useState(activeTabIndex);
 
   if (!children) throw new Error('children은 반드시 존재해야 합니다.');
 
