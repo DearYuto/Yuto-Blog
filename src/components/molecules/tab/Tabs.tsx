@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactElement, ReactNode, useState } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { useActiveTab, useActiveTabDispatch } from './utils/customHooks';
 
 import Flex from '@/components/atoms/flex/Flex';
@@ -22,22 +22,22 @@ export type TabsProps = {
  *
  */
 function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
-  checkActiveIndex({ children, activeTabIndex });
-
-  const labels: ReactNode[] = [];
-  const contents: ReactNode[] = [];
+  const labels: ReactElement[] = [];
+  const contents: ReactElement[] = [];
 
   React.Children.forEach(children, (child: ReactElement) => {
     const type = child.type as unknown as { displayName: string };
 
-    if (type.displayName === 'TabLabel') {
+    if (type.displayName === 'Tabs.Label') {
       return labels.push(child);
     }
 
-    if (type.displayName === 'TabContent') {
+    if (type.displayName === 'Tabs.Content') {
       return contents.push(child);
     }
   });
+
+  checkActiveIndex({ children: labels, activeTabIndex });
 
   return (
     <TabProvider activeTabIndex={activeTabIndex}>
@@ -46,6 +46,7 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
     </TabProvider>
   );
 }
+TabContainer.displayName = 'Tabs';
 
 /**
  *
@@ -76,7 +77,7 @@ const TabLabel = ({ label, index }: TabProps) => {
   );
 };
 
-TabLabel.displayName = 'TabLabel';
+TabLabel.displayName = 'Tabs.Label';
 
 /**
  *
@@ -89,7 +90,7 @@ const TabContent = ({ children }: ContentProps) => {
   return <p className={content}>{children}</p>;
 };
 
-TabContent.displayName = 'TabContent';
+TabContent.displayName = 'Tabs.Content';
 
 /**
  * ! export

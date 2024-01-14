@@ -1,27 +1,36 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import Tabs from './Tabs';
 
+/**
+ * 탭 컴포넌트
+ */
 const meta: Meta<typeof Tabs> = {
   title: 'Common/Tab',
   component: Tabs,
   tags: ['autodocs'],
+  args: {
+    activeTabIndex: 0,
+  },
+  argTypes: {
+    activeTabIndex: {
+      control: 'number',
+      description: 'active tab index (기본 값: 0)',
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    activeTabIndex: 0,
-    children: [
-      <Tabs.Label key='0' index={0} label='About'></Tabs.Label>,
-      <Tabs.Content key='1'>탭1 컨텐츠입니다.</Tabs.Content>,
+export const Default: StoryFn = ({ activeTabIndex = 0 }) => (
+  <Tabs activeTabIndex={activeTabIndex}>
+    <Tabs.Label index={0} label='About'></Tabs.Label>
+    <Tabs.Content>유토의 탭 컴포넌트1</Tabs.Content>
 
-      <Tabs.Label key='2' index={1} label='Content'></Tabs.Label>,
-      <Tabs.Content key='3'>탭2 컨텐츠입니다.</Tabs.Content>,
+    <Tabs.Label index={1} label='Contact'></Tabs.Label>
+    <Tabs.Content>유토의 탭 컴포넌트2</Tabs.Content>
 
-      <Tabs.Label key='4' index={2} label='Test'></Tabs.Label>,
-      <Tabs.Content key='5'>탭3 컨텐츠입니다.</Tabs.Content>,
-    ],
-  },
-};
+    <Tabs.Label index={2} label='Posts'></Tabs.Label>
+    <Tabs.Content>유토의 탭 컴포넌트3</Tabs.Content>
+  </Tabs>
+);
