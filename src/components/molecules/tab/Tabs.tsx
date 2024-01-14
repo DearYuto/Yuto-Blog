@@ -37,10 +37,10 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
     }
   });
 
-  checkActiveIndex({ children: labels, activeTabIndex });
+  const outOfRange = checkActiveIndex({ children: labels, activeTabIndex });
 
   return (
-    <TabProvider activeTabIndex={activeTabIndex}>
+    <TabProvider activeTabIndex={outOfRange ? 0 : activeTabIndex}>
       <Flex>{labels}</Flex>
       <Flex>{contents}</Flex>
     </TabProvider>

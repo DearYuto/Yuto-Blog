@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import Tabs from './Tabs';
 
 /**
@@ -20,7 +20,6 @@ const meta: Meta<typeof Tabs> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 export const Default: StoryFn = ({ activeTabIndex = 0 }) => (
   <Tabs activeTabIndex={activeTabIndex}>
