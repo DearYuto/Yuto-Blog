@@ -8,7 +8,7 @@ import Text from '@/components/atoms/text/Text';
 import { TabProvider } from './components/Provider';
 
 import { content, tab } from './tabs.css';
-import { checkActiveIndex } from './utils/checkValidation';
+import { checkOutOfRangeActiveIndex } from './utils/checkValidation';
 
 export type TabsProps = {
   activeTabIndex?: number;
@@ -37,7 +37,10 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
     }
   });
 
-  const outOfRange = checkActiveIndex({ children: labels, activeTabIndex });
+  const outOfRange = checkOutOfRangeActiveIndex({
+    children: labels,
+    activeTabIndex,
+  });
 
   return (
     <TabProvider activeTabIndex={outOfRange ? 0 : activeTabIndex}>

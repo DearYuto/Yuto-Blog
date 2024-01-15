@@ -21,7 +21,7 @@ const meta: Meta<typeof Tabs> = {
 
 export default meta;
 
-export const Default: StoryFn = ({ activeTabIndex = 0 }) => (
+export const Default: StoryFn = ({ activeTabIndex }) => (
   <Tabs activeTabIndex={activeTabIndex}>
     <Tabs.Label index={0} label='About'></Tabs.Label>
     <Tabs.Content>유토의 탭 컴포넌트1</Tabs.Content>
