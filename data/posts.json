@@ -1,0 +1,10 @@
+[
+  {
+    "id": 0,
+    "title": "컴파운드 컴포지션 패턴을 적용하다 만난 스토리북 에러(chunk failed) 해결",
+    "description": "Loading chunk components-molecules-tab-Tabs-stories failed.",
+    "date": "2024. 01. 02",
+    "category": "troubleshooting",
+    "path": "storybook-error-0"
+  }
+]
