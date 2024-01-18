@@ -1,3 +1,4 @@
+import { palette } from '@/utils/colors';
 import { globalStyle } from '@vanilla-extract/css';
 
 globalStyle('*', {
@@ -6,7 +7,7 @@ globalStyle('*', {
   boxSizing: 'border-box',
   listStyle: 'none',
   textDecoration: 'none',
-  color: 'black',
+  color: palette.gray700,
 });
 
 globalStyle('h1', {
@@ -19,4 +20,8 @@ globalStyle('html, body', {
 
 globalStyle('body', {
   lineHeight: 1.5,
+});
+
+globalStyle('code span', {
+  color: palette.gray100,
 });
