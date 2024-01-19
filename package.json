@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_89348b144952fca"
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.11",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^18",
     "@vanilla-extract/next-plugin": "^2.3.2",
     "@vanilla-extract/webpack-plugin": "^2.3.1",
+    "chromatic": "^10.3.1",
     "css-loader": "^6.8.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
@@ -42,5 +44,7 @@
     "storybook": "^7.6.6",
     "style-loader": "^3.3.3",
     "typescript": "^5"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "next-blog@0.1.0"
 }
