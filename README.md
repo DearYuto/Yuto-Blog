@@ -1,8 +1,33 @@
-# NEXT BLOG
+# 2024 BLOG PROJECT. 🐈
 
-next.js를 사용하여 블로그 만드는 프로젝트입니다.
+2024. 01 ~
 
-## 기능 구현 목록
+현재 개발 `진행중`인 프로젝트입니다.
+
+<br/>
+
+> Tech Stacks.
+
+<img src="https://img.shields.io/badge/VanillaExtract-CCFBF1?style=flat-round&logo=css3&logoColor=4A5E65"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-round&logo=Next.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-round&logo=Storybook&logoColor=white"/>
+
+<br/>
+
+> Docs.
+
+[Storybook](https://65aa1746f3cde2304b1184b8-btrrypgwot.chromatic.com/?path=/docs/colors--docs)
+
+<br/>
+
+> TroubleShooting.
+
+[Issue](https://github.com/DearYuto/Yuto-Blog/issues)
+
+---
+
+## 기능 구현 목록 📄
 
 - [x] nav 메뉴 구성
 
@@ -12,9 +37,9 @@ next.js를 사용하여 블로그 만드는 프로젝트입니다.
   - [x] posts는 클릭 시 `/posts`로 이동한다.
   - [x] contact는 클릭 시 `/contact`로 이동한다.
 
-- [ ] about 페이지 구성
+- [x] about 페이지 구성
 
-  - [ ] 내 프로필을 확인할 수 있다.
+  - [x] 내 프로필을 확인할 수 있다.
 
 - [ ] posts 페이지 구성
 
