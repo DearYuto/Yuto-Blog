@@ -1,27 +1,17 @@
 # 2024 BLOG PROJECT. 🐈
 
-2024. 01 ~
-
 현재 개발 `진행중`인 프로젝트입니다.
 
-<br/>
+### 💻 Tech Stacks.
 
-> Tech Stacks.
+<img src="https://img.shields.io/badge/VanillaExtract-CCFBF1?style=flat-round&logo=css3&logoColor=4A5E65"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-round&logo=Next.js&logoColor=white"/> <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-round&logo=Storybook&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/VanillaExtract-CCFBF1?style=flat-round&logo=css3&logoColor=4A5E65"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-round&logo=Next.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-round&logo=Storybook&logoColor=white"/>
-
-<br/>
-
-> Docs.
+### 📔 Docs.
 
 [Storybook](https://65aa1746f3cde2304b1184b8-btrrypgwot.chromatic.com/?path=/docs/colors--docs)
 
-<br/>
-
-> TroubleShooting.
+### ✈ TroubleShooting.
 
 [Issue](https://github.com/DearYuto/Yuto-Blog/issues)
 
