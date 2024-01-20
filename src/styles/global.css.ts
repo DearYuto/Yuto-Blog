@@ -17,10 +17,12 @@ globalStyle('html', {
   position: 'relative',
   color: '#393a47',
   fontFamily: 'nanum_gothic',
+  height: 'auto',
+  minHeight: '100vh',
 });
 
 globalStyle('body', {
-  minHeight: '100vh',
+  height: 'auto',
   position: 'relative',
   background: `radial-gradient(
     circle at 28% 0%,
