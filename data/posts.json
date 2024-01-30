@@ -14,5 +14,13 @@
     "date": "2024. 01. 05",
     "category": "troubleshooting",
     "path": "atomic-design-pattern-0"
+  },
+  {
+    "id": 2,
+    "title": "바닐라 익스트랙 세팅 에러",
+    "description": "storybook 충돌 에러 해결기",
+    "date": "2024. 01. 02",
+    "category": "troubleshooting",
+    "path": "vanilla-extract-setting-error-0"
   }
 ]
