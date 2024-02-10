@@ -4,6 +4,7 @@ import { palette } from '@/utils/colors';
 
 export type Props = {
   children: React.ReactNode;
+  className?: string;
   as?: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   color?: keyof typeof palette;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -14,6 +15,7 @@ export type Props = {
 export default function Text({
   children,
   style,
+  className,
   as: Component = 'span',
   color = 'gray700',
   size = 'md',
@@ -22,7 +24,7 @@ export default function Text({
   return (
     <Component
       style={style}
-      className={`${textColor[color]} ${textWeight[weight]} ${textSize[size]}`}
+      className={`${textColor[color]} ${textWeight[weight]} ${textSize[size]} ${className}`}
     >
       {children}
     </Component>
