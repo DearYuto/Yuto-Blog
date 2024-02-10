@@ -45,3 +45,12 @@ globalStyle('body', {
     rgba(244, 244, 244, 100) 80%
   )`,
 });
+
+globalStyle('.hidden', {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  margin: '-1px',
+  overflow: 'hidden',
+  clipPath: 'polygon(0 0, 0 0, 0 0)',
+});
