@@ -5,14 +5,20 @@ import Link from 'next/link';
 import React from 'react';
 import { contaier } from './nav.css';
 
+import Image from 'next/image';
+import Logo from '../../../../public/images/logo/yuto_logo-black.svg';
+
 export default function Nav() {
   return (
     <nav className={`${contaier} ${nanum_gothic.className}`}>
       <Flex alignItems='center' justifyContent='spaceBetween'>
         <Link href={'/'}>
-          <Text size='lg' weight='bold' as='h1'>
-            유토의 하루
-          </Text>
+          <Flex>
+            <Text className='hidden' size='lg' weight='bold' as='h1'>
+              유토 블로그
+            </Text>
+            <Image width={75} alt='logo' src={Logo}></Image>
+          </Flex>
         </Link>
         <div className={`${comfortaa.className}`}>
           <Flex gap='md'>
