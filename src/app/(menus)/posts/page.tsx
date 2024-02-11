@@ -1,8 +1,10 @@
 import React from 'react';
-import { getPosts } from '@/service/posts';
+import Link from 'next/link';
+
 import Flex from '@/components/atoms/flex/Flex';
 import Card from '@/components/molecules/card/Card';
-import Link from 'next/link';
+
+import { getPosts } from '@/service/posts';
 
 export default async function PostPage() {
   const posts = await getPosts();
