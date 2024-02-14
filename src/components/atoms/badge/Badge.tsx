@@ -1,6 +1,7 @@
 import { palette } from '@/utils/colors';
 import { textColor } from '../text/text.css';
-import { backgroundColor, badgeStyle, borderRadius } from './badge.css';
+import { backgroundColor, badgeStyle } from './badge.css';
+import { borderRadius } from './../../../styles/common.css';
 
 type Props = {
   text: string;
