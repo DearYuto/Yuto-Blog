@@ -9,7 +9,7 @@
 
 ### 📔 Docs.
 
-[Storybook](https://65aa1746f3cde2304b1184b8-btrrypgwot.chromatic.com/?path=/docs/colors--docs)
+[Storybook](https://65aa1746f3cde2304b1184b8-owqzcfhnem.chromatic.com/?path=/docs/colors--docs)
 
 ### ✈ TroubleShooting.
 
