@@ -1,6 +1,6 @@
 import { vars } from '@/styles/global.css';
 import { palette } from '@/utils/colors';
-import { fontFace, style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 const base = style({
   padding: '8px 15px',
