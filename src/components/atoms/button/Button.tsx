@@ -6,9 +6,11 @@ type Props = {
   children: React.ReactNode;
   variant?: 'primary' | 'primaryOutline';
   size?: 'auto' | 'xs' | 'sm' | 'md' | 'lg' | 'full';
+  onClick: () => void;
 };
 
 export default function Button({
+  onClick,
   children = 'Text',
   size = 'sm',
   variant = 'primary',
@@ -18,5 +20,9 @@ export default function Button({
     buttonSize[size],
     buttonVariant[variant]
   );
-  return <button className={className}>{children}</button>;
+  return (
+    <button onClick={onClick} className={className}>
+      {children}
+    </button>
+  );
 }
