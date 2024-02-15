@@ -1,7 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { TabsDispatchContext, TabsStateContext } from '../utils/customHooks';
+import {
+  TabsDispatchContext,
+  TabsStateContext,
+} from '../utils/hooks/useActiveTab';
 
 type ProviderProps = {
   activeTabIndex: number;

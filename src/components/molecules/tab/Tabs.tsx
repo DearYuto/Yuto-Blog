@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactElement, ReactNode } from 'react';
-import { useActiveTab, useActiveTabDispatch } from './utils/customHooks';
+import { useActiveTab, useActiveTabDispatch } from './utils/hooks/useActiveTab';
 
 import Flex from '@/components/atoms/flex/Flex';
 import Text from '@/components/atoms/text/Text';
