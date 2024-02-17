@@ -15,7 +15,7 @@ export const Default: StoryFn = () => {
 
   return (
     <Modal isOpen={isOpen} closeModal={closeModal} openModal={openModal}>
-      <ModalContents>모달 초안 테스트</ModalContents>
+      <Modal.Contents>모달 초안 테스트</Modal.Contents>
     </Modal>
   );
 };
