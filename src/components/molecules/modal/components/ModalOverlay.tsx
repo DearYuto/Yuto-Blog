@@ -8,3 +8,5 @@ type Props = {
 export default function ModalOverlay({ onClose }: Props) {
   return <div onClick={onClose} className={overlay}></div>;
 }
+
+ModalOverlay.displayName = 'Modal.Overlay';
