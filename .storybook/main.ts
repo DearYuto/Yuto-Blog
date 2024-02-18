@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
   ],
+  typescript: { reactDocgen: 'react-docgen' },
   framework: {
     name: '@storybook/nextjs',
     options: {},
