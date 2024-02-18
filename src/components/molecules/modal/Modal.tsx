@@ -3,6 +3,7 @@ import Button from '@/components/atoms/button/Button';
 import ModalContents from './components/ModalContents';
 import ModalOverlay from './components/ModalOverlay';
 import ModalCloseButton from './components/ModalCloseButton';
+import { DISPLAY_NAME, allowedDisplayNames } from './constants/displayNames';
 
 type Props = {
   isOpen: boolean;
@@ -13,12 +14,10 @@ type Props = {
 
 function ModalContainer({ openModal, closeModal, children, isOpen }: Props) {
   if (children) {
-    const allowedDisplayNames = ['Modal.Contents', 'Modal.CloseButton'];
-
     if ('length' in children) {
       children.map((child) => {
         const { displayName } = child.type as unknown as {
-          displayName: string;
+          displayName: (typeof allowedDisplayNames)[number];
         };
 
         if (!allowedDisplayNames.includes(displayName)) {
@@ -34,7 +33,7 @@ function ModalContainer({ openModal, closeModal, children, isOpen }: Props) {
         displayName: string;
       };
 
-      if (displayName !== 'Modal.Contents') {
+      if (displayName !== DISPLAY_NAME.contents) {
         throw new Error(
           '모달의 자식 요소는 반드시 ModalContents 컴포넌트를 사용해야 합니다.'
         );
@@ -55,7 +54,7 @@ function ModalContainer({ openModal, closeModal, children, isOpen }: Props) {
   );
 }
 
-ModalContainer.displayName = 'Modal';
+ModalContainer.displayName = DISPLAY_NAME.container;
 
 const Modal = Object.assign(ModalContainer, {
   Contents: ModalContents,
