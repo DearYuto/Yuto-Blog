@@ -30,7 +30,7 @@
     "@storybook/addon-onboarding": "^1.0.10",
     "@storybook/blocks": "^7.6.6",
     "@storybook/nextjs": "^7.6.6",
-    "@storybook/react": "^7.6.6",
+    "@storybook/react": "^7.6.16",
     "@storybook/test": "^7.6.6",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^6.2.0",
