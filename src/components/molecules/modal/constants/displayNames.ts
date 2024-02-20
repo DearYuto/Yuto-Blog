@@ -1,7 +1,7 @@
 const PREFIX = 'Modal';
 
 const DISPLAY_NAME = Object.freeze({
-  container: `${PREFIX}`,
+  root: `${PREFIX}`,
   overlay: `${PREFIX}.Overlay`,
   contents: `${PREFIX}.Contents`,
   closeButton: `${PREFIX}.CloseButton`,

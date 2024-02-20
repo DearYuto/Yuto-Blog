@@ -8,7 +8,11 @@ type Props = {
 };
 
 export default function ModalCloseButton({ onClose, children }: Props) {
-  return <Button onClick={onClose}>{children}</Button>;
+  return (
+    <Button variant='primaryOutline' onClick={onClose}>
+      {children}
+    </Button>
+  );
 }
 
 ModalCloseButton.displayName = DISPLAY_NAME.closeButton;
