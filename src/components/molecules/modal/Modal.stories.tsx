@@ -1,6 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import Modal from './Modal';
-import { useModalDispatch, useOpenModal } from './utils/hooks/useModal';
 
 const meta: Meta<typeof Modal> = {
   title: 'Common/Modal',

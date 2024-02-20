@@ -7,30 +7,40 @@ import ModalCloseButton from './components/ModalCloseButton';
 
 import { DISPLAY_NAME } from './constants/displayNames';
 import ModalValidator from './utils/validator/Validator';
+import ModalProvider from './components/Provider';
+import { useModalDispatch, useOpenModal } from './utils/hooks/useModal';
 
 type Props = {
-  isOpen: boolean;
   children: React.ReactElement | React.ReactElement[];
-  openModal: () => void;
-  closeModal: () => void;
 };
 
-function ModalContainer({ openModal, closeModal, children, isOpen }: Props) {
-  const childrenCount = React.Children.count(children);
-
+/**
+ * ContextAPI 사용을 위해 래핑
+ */
+function ModalContainer({ children }: Props) {
   React.Children.forEach(children, (child) => {
     const { displayName } = child.type as unknown as { displayName: string };
-
-    if (childrenCount > 1) {
-      ModalValidator.validateModalDisplayName(displayName);
-      return;
-    }
 
     ModalValidator.ensureSingleModalContent(displayName);
   });
 
   return (
-    <div>
+    <ModalProvider>
+      <ModalRoot>{children}</ModalRoot>
+    </ModalProvider>
+  );
+}
+
+type RootProps = {
+  children: React.ReactElement | React.ReactElement[];
+};
+
+function ModalRoot({ children }: RootProps) {
+  const isOpen = useOpenModal();
+  const { openModal, closeModal } = useModalDispatch();
+
+  return (
+    <>
       <Button onClick={openModal}>Open</Button>
       {isOpen && (
         <>
@@ -38,11 +48,11 @@ function ModalContainer({ openModal, closeModal, children, isOpen }: Props) {
           <>{children}</>
         </>
       )}
-    </div>
+    </>
   );
 }
 
-ModalContainer.displayName = DISPLAY_NAME.container;
+ModalContainer.displayName = DISPLAY_NAME.root;
 
 const Modal = Object.assign(ModalContainer, {
   Contents: ModalContents,
