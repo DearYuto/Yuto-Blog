@@ -1,15 +1,10 @@
-import { useState } from 'react';
+import { createContext, useContext } from 'react';
 
-export const useModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const ModalStateContext = createContext<boolean>(false);
+export const useOpenModal = () => useContext(ModalStateContext);
 
-  const openModal = () => {
-    setIsOpen(() => true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(() => false);
-  };
-
-  return { isOpen, openModal, closeModal };
-};
+export const ModalDispatchContext = createContext({
+  openModal: () => {},
+  closeModal: () => {},
+});
+export const useModalDispatch = () => useContext(ModalDispatchContext);
