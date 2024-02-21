@@ -9,6 +9,7 @@ import { TabProvider } from './components/Provider';
 
 import { content, tab } from './tabs.css';
 import { checkOutOfRangeActiveIndex } from './utils/checkValidation';
+import { DISPLAY_NAME } from './constants/displayNames';
 
 export type TabsProps = {
   activeTabIndex?: number;
@@ -49,7 +50,7 @@ function TabContainer({ children, activeTabIndex = 0 }: TabsProps) {
     </TabProvider>
   );
 }
-TabContainer.displayName = 'Tabs';
+TabContainer.displayName = DISPLAY_NAME.tabs;
 
 /**
  *
@@ -80,7 +81,7 @@ const TabLabel = ({ label, index }: TabProps) => {
   );
 };
 
-TabLabel.displayName = 'Tabs.Label';
+TabLabel.displayName = DISPLAY_NAME.label;
 
 /**
  *
@@ -93,7 +94,7 @@ const TabContent = ({ children }: ContentProps) => {
   return <p className={content}>{children}</p>;
 };
 
-TabContent.displayName = 'Tabs.Content';
+TabContent.displayName = DISPLAY_NAME.content;
 
 /**
  * ! export
